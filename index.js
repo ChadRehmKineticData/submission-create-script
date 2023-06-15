@@ -6,7 +6,6 @@ const SUBMISSION = require('./submission.json')
 
 NAME="Bench Mark"
 SLUG="bench-mark"
-MAX=10
 
 
 function request(method, url, params, body, message) {
@@ -95,7 +94,7 @@ function deleteKapp() {
 async function initialize() {
   await postKapp();
   await postForm();
-  for (x = 0; x < MAX; x++) {
+  for (x = 0; x < process.env.MAX; x++) {
     await postSubmission();
   }
 }
